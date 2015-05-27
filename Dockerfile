@@ -1,4 +1,4 @@
-# Minecraft 1.8.4 Dockerfile - Example with notes
+# Minecraft 1.8.6 Dockerfile - Example with notes
 
 
 # Use the offical Debian Docker image with a specified version tag, Wheezy, so not all
@@ -13,7 +13,7 @@ RUN apt-get -y update
 RUN apt-get -y install openjdk-7-jre-headless wget
 
 # Download Minecraft Server components
-RUN wget -q https://s3.amazonaws.com/Minecraft.Download/versions/1.8.4/minecraft_server.1.8.4.jar
+RUN wget -q https://s3.amazonaws.com/Minecraft.Download/versions/1.8.6/minecraft_server.1.8.6.jar
 
 # Sets working directory for the CMD instruction (also works for RUN, ENTRYPOINT commands)
 # Create mount point, and mark it as holding externally mounted volume
@@ -24,4 +24,4 @@ VOLUME /data
 EXPOSE 25565
 
 #Automatically accept Minecraft EULA, and start Minecraft server
-CMD echo eula=true > /data/eula.txt && java -jar /minecraft_server.1.8.4.jar
+CMD echo eula=true > /data/eula.txt && java -jar /minecraft_server.1.8.6.jar
