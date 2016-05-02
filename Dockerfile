@@ -1,4 +1,4 @@
-# Minecraft 1.8.7 Dockerfile - Example with notes
+# Minecraft 1.9.2 Dockerfile - Example with notes
 
 
 # Use the offical Debian Docker image with a specified version tag, Wheezy, so not all
