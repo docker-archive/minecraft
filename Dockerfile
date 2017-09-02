@@ -21,9 +21,6 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/so
     wget -q https://s3.amazonaws.com/Minecraft.Download/versions/${MINECRAFT_VERSION}/minecraft_server.${MINECRAFT_VERSION}.jar;
 # We do the above in a single line to reduce the number of layers in our container
 
-# Download Minecraft Server components
-RUN wget -q https://s3.amazonaws.com/Minecraft.Download/versions/1.11.2/minecraft_server.1.11.2.jar
-
 # Sets working directory for the CMD instruction (also works for RUN, ENTRYPOINT commands)
 # Create mount point, and mark it as holding externally mounted volume
 WORKDIR /data
@@ -33,4 +30,4 @@ VOLUME /data
 EXPOSE 25565
 
 #Automatically accept Minecraft EULA, and start Minecraft server
-CMD echo eula=true > /data/eula.txt && java -jar /minecraft_server.1.11.2.jar
+CMD echo eula=true > /data/eula.txt && java -jar /minecraft_server.${MINECRAFT_VERSION}.jar
