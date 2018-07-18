@@ -7,7 +7,7 @@ FROM debian:jessie
 MAINTAINER Michael Chiang <mchiang@docker.com>
 
 # Drives which version we are going to install
-ENV MINECRAFT_VERSION 1.12.2
+ENV MINECRAFT_VERSION 1.13
 
 # Use APT (Advanced Packaging Tool) built in the Linux distro to download Java, a dependency
 # to run Minecraft.
