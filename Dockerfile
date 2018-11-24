@@ -7,7 +7,7 @@ FROM debian:jessie
 MAINTAINER Michael Chiang <mchiang@docker.com>
 
 # Drives which version we are going to install
-ENV MINECRAFT_VERSION 1.12.2
+ENV MINECRAFT_VERSION 1.13.2
 
 # Use APT (Advanced Packaging Tool) built in the Linux distro to download Java, a dependency
 # to run Minecraft.
@@ -15,10 +15,11 @@ ENV MINECRAFT_VERSION 1.12.2
 # Then we update apt
 # Then we pull in all of our dependencies, 
 # Finally, we download the correct .jar file using wget
+# .jar file fetched from the official page https://minecraft.net/en-us/download/server/
 RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list; \
     apt-get -y update; \
     apt install -y -t jessie-backports openjdk-8-jre-headless ca-certificates-java wget; \
-    wget -q https://s3.amazonaws.com/Minecraft.Download/versions/${MINECRAFT_VERSION}/minecraft_server.${MINECRAFT_VERSION}.jar;
+    wget -q https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar -O /minecraft_server.${MINECRAFT_VERSION}.jar;
 # We do the above in a single line to reduce the number of layers in our container
 
 # Sets working directory for the CMD instruction (also works for RUN, ENTRYPOINT commands)
