@@ -1,5 +1,5 @@
 services:
   - docker
 
-before_install:
+script:
   - docker image build --tag kitematic/minecraft .
