@@ -1,0 +1,7 @@
+language: bash
+
+services:
+  - docker
+
+script:
+  - docker image build --tag kitematic/minecraft .
