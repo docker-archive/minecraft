@@ -7,7 +7,7 @@ FROM debian:stretch
 MAINTAINER Michael Chiang <mchiang@docker.com>
 
 # Simple utility for download a specific version of the minecraft server.jar
-ENV MINECRAFT_UTILITY https://github.com/marblenix/minecraft_downloader/releases/download/20190324-f1427be/minecraft_downloader_linux
+ENV MINECRAFT_UTILITY https://github.com/marblenix/minecraft_downloader/releases/download/latest/minecraft_downloader_linux
 # Version of minecraft to download
 ENV MINECRAFT_VERSION latest
 
